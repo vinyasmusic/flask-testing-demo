@@ -5,6 +5,9 @@ A demo project to showcase Testing with a Flask app
 
 ### Getting Started
 
+This is assuming you have Python and [PostgreSQL](https://www.postgresql.org/) already setup on your machine, if not then go [here](https://www.codecademy.com/article/installing-and-using-postgresql-locally) to learn how to do this.
+
+
 1. Clone the repo
 2. Install Poetry by following the instructions on their [website]( https://python-poetry.org/docs/#installation
 )
