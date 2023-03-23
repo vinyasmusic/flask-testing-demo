@@ -1,5 +1,3 @@
-import json
-
 from app.models.user import User
 
 
@@ -9,8 +7,8 @@ def test_create_user(client, app):
         "/users/user",
         json={"name": "Anakin", "email": "darth@deathstar.com", "password": "StormTr00per"},
     )
-    data = json.loads(response.data)
     assert response.status_code == 201
+    data = response.json
     assert "darth@deathstar.com" == data["email"]
 
     # Ensure the user is in the database
@@ -25,7 +23,7 @@ def test_get_user(client, app, user):
     response = client.get(f"/users/{user.id}")
 
     assert response.status_code == 200
-    data = json.loads(response.data)
+    data = response.json
     assert data["name"] == "Darth Vader"
     assert data["email"] == "darth@deathstar.com"
     assert "password" not in data  # Password should not be exposed
@@ -36,8 +34,8 @@ def test_update_user(client, app, user):
     response = client.put(
         f"/users/{user.id}", json={"name": "Skywalker", "email": "skywalker@midichlorian.com"}
     )
-    data = json.loads(response.data)
     assert response.status_code == 200
+    data = response.json
 
     # Ensure the user is updated in the database
     updated_user = User.query.filter_by(id=user.id).first()
@@ -49,8 +47,8 @@ def test_update_user(client, app, user):
 def test_create_user_missing_fields(client):
     # Ensure we can't create a new user with missing fields
     response = client.post("/users/user", json={"name": "R2D2", "password": "c3P0@Tatooine"})
-    data = json.loads(response.data)
     assert response.status_code == 400
+    data = response.json
     assert "required" in data["message"]
 
 
