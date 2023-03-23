@@ -16,6 +16,6 @@ class UserResponseSchema(UserSchema):
     created_at: datetime
 
     class Config:
-        """Config for FolderInvoicesResponse"""
+        """Config for UserResponseSchema"""
 
         orm_mode = True
