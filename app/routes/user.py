@@ -9,10 +9,6 @@ users_routes = Blueprint("users_routes", __name__, url_prefix="/users")
 @users_routes.route("/user", methods=["POST"])
 def create_user():
     data = request.json
-    name = data.get("name")
-    email = data.get("email")
-    password = data.get("password")
-
     user_schema = UserCreateSchema(**data)
     user = User(**user_schema.dict())
     db.session.add(user)

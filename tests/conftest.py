@@ -20,7 +20,7 @@ def client(app):
 
 @pytest.fixture
 def user(app):
-    user = User(name="John", email="john@example.com", password="password")
+    user = User(name="Darth Vader", email="darth@deathstar.com", password="D@rKseID")
     db.session.add(user)
     db.session.commit()
     yield user

@@ -10,16 +10,16 @@ def test_create_user(client, app):
     # Ensure we can create a new user
     response = client.post(
         "/users/user",
-        json={"name": "John", "email": "john@example.com", "password": "password"},
+        json={"name": "Anakin", "email": "darth@deathstar.com", "password": "StormTr00per"},
     )
     data = json.loads(response.data)
     assert response.status_code == 201
-    assert "john@example.com" == data['email']
+    assert "darth@deathstar.com" == data["email"]
 
     # Ensure the user is in the database
-    user = User.query.filter_by(email="john@example.com").first()
+    user = User.query.filter_by(email="darth@deathstar.com").first()
     assert user is not None
-    assert user.name == "John"
+    assert user.name == "Anakin"
     assert user.password != "password"  # Password should be hashed
 
 
@@ -29,8 +29,8 @@ def test_get_user(client, app, user):
 
     assert response.status_code == 200
     data = json.loads(response.data)
-    assert data["name"] == "John"
-    assert data["email"] == "john@example.com"
+    assert data["name"] == "Darth Vader"
+    assert data["email"] == "darth@deathstar.com"
     assert "password" not in data  # Password should not be exposed
 
 

@@ -12,7 +12,6 @@ weather_routes = Blueprint("weather_routes", __name__, url_prefix="/")
 
 @weather_routes.route("weather/<city>", methods=["GET"])
 def get_weather(city):
-
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}&units=metric"
     response = requests.get(url)
     if response.status_code == 200:

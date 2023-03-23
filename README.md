@@ -29,3 +29,30 @@ export FLASK_DEBUG=1
 6. Start the flask app by `flask run`
 
 The app will be accessible at http://localhost:5000.
+
+
+## What is unit testing ? 
+
+- Unit testing is a software testing technique that involves testing individual units or components of code in 
+   isolation from the rest of the system.
+- It focuses on testing the functionality of each unit in **isolation**, verifying that it produces the expected output for a given input or set of inputs.
+- It verifies different states or behavioral aspects of the application 
+- Can be single function or single use-case (*)
+
+
+## Why is unit testing important?
+
+- Unit testing helps catch bugs and defects early in the development process, making them easier and less expensive to fix.
+- Ensures that the code is working as expected and meeting requirements.
+- Increases code quality, maintainability, and re-usability.
+- Faster and more frequent releases, reducing time to market and enhancing customer satisfaction.
+- Refactoring with confidence, ensuring that changes do not break existing functionality.
+
+## Why pytest ?
+
+- Pytest is a powerful, flexible, and comprehensive testing framework.
+- Simple and intuitive API that makes it easy to write and manage tests.
+- Support test fixtures and plugins that enable advanced testing features, such as parameterization, fixtures, and mocks.
+- Rich ecosystem of third-party plugins and extensions that enhance its functionality and enable integration with other tools and frameworks.
+- Clear and concise test reports that make it easy to understand the test results and identify issues quickly.
+- Community 

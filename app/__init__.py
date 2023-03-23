@@ -13,9 +13,7 @@ def handle_400_error(error):
     status_code = getattr(error, "status_code", 400)
     error_message = getattr(error, "message", str(error))
     # TODO : refactor with Case matching when repo is moved to Py 3.10
-    response = jsonify(
-        {"message": error_message, "status_code": status_code}
-    )
+    response = jsonify({"message": error_message, "status_code": status_code})
     response.status_code = status_code
     return response
 
