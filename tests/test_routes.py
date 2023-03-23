@@ -36,6 +36,7 @@ def test_update_user(client, app, user):
     )
     assert response.status_code == 200
     data = response.json
+    assert len(data.keys()) > 0
 
     # Ensure the user is updated in the database
     updated_user = User.query.filter_by(id=user.id).first()
