@@ -1,4 +1,6 @@
 import pytest
+import requests
+
 from app import create_app, db
 from app.models.user import User
 
@@ -23,6 +25,12 @@ def user(app):
     user = User(name="Darth Vader", email="darth@deathstar.com", password="D@rKseID")
     db.session.add(user)
     db.session.commit()
-    yield user
-    db.session.delete(user)
-    db.session.commit()
+    return user
+
+
+# @pytest.fixture(autouse=True)
+# def disable_network_calls(monkeypatch):
+#     def block_get():
+#         raise RuntimeError("Test should be inside a blackbox")
+#
+#     monkeypatch.setattr(requests, "get", lambda *args, **kwargs: block_get())

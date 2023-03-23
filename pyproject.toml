@@ -34,11 +34,10 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.pytest.ini_options]
-addopts = "--cov --disable-warnings --ignore=tests/*.py"
+addopts = "--disable-warnings --ignore=tests/*.py"
 markers = [
     "creation_test",
 ]
 
 [tool.coverage.run]
-
 source = ['app']
