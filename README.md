@@ -56,3 +56,11 @@ The app will be accessible at http://localhost:5000.
 - Rich ecosystem of third-party plugins and extensions that enhance its functionality and enable integration with other tools and frameworks.
 - Clear and concise test reports that make it easy to understand the test results and identify issues quickly.
 - Community 
+
+
+
+### Links
+1. [Pytest Plugins](https://docs.pytest.org/en/7.1.x/reference/plugin_list.html)
+2. [Test Podcast](https://testandcode.com/)
+3. [Pytest Examples](https://docs.pytest.org/en/7.1.x/example/index.html)
+4. [Python Debugging](https://realpython.com/python-debugging-pdb/)
